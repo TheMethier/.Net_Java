@@ -73,8 +73,8 @@ namespace Lab1Tests
         public void ShouldReturnListOrderDesendingByValueWeightRatio()
         {
             Problem problem = new Problem(5, 10);
-            Result result = problem.Solve(10000);
-            Assert.That(result.Items, Is.EqualTo(problem.Items.OrderByDescending(x => (double)(x.Value) / (double)(x.Weight))));
+            Result result = problem.Solve(80);
+            Assert.That(result.Items, Is.EqualTo(result.Items.OrderByDescending(x => (double)(x.Value) / (double)(x.Weight))));
         }
         [Test]
         public void ShouldReturnResultsWhenTotalWeightIsLessEqualThanCapacity()

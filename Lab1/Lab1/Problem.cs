@@ -46,7 +46,9 @@ namespace Lab1
         public Result Solve(int capacity)
         {
             Result result = new Result();
-            List<Item> itemsInOrder = this.Items.OrderByDescending(x=>(double)(x.Value)/(double)(x.Weight)).ToList();
+            List<Item> itemsInOrder = this.Items
+                .OrderByDescending(x=>(double)(x.Value)/(double)(x.Weight))
+                .ToList();
             List<Item> items = new List<Item>();
             int totalWeight = 0;
             foreach(Item item in itemsInOrder)

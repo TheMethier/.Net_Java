@@ -15,6 +15,10 @@ namespace Lab1GUI
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
@@ -27,17 +31,7 @@ namespace Lab1GUI
                 results.Text = result.ToString();
                 instance.Text = problem.ToString();
             }
-
-
-            
-
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(textBox1.Text))
@@ -46,7 +40,7 @@ namespace Lab1GUI
                 vlabel1.Visible = true;
                 vlabel1.Text = "Field is empty";
             }
-            else if (!Regex.IsMatch(textBox1.Text, "^[0-9]+"))
+            else if (!Regex.IsMatch(textBox1.Text, "^[0-9]+$"))
             {
                 e.Cancel = true;
                 vlabel1.Visible = true;
@@ -67,7 +61,7 @@ namespace Lab1GUI
                 vlabel2.Visible = true;
                 vlabel2.Text = "Field is empty";
             }
-            else if (!Regex.IsMatch(textBox2.Text, "^[0-9]+"))
+            else if (!Regex.IsMatch(textBox2.Text, "^[0-9]+$"))
             {
                 e.Cancel = true;
                 vlabel2.Visible = true;
@@ -93,7 +87,7 @@ namespace Lab1GUI
                 vlabel3.Visible = true;
                 vlabel3.Text = "Field is empty";
             }
-            else if (!Regex.IsMatch(textBox3.Text, "^[0-9]+"))
+            else if (!Regex.IsMatch(textBox3.Text, "^[0-9]+$"))
             {
                 e.Cancel = true;
                 vlabel3.Visible = true;
